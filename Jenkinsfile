@@ -6,5 +6,15 @@ pipeline {
                 echo 'pulling from SCM'
             }
         }
+        stage('build') {
+            steps {
+                echo 'building the project'
+            }
+        }
+        stage('deploy') {
+            steps {
+                echo 'deploying to stage environment'
+            }
+        }
     }
 }
