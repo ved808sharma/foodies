@@ -13,6 +13,10 @@ pipeline {
         stage('Infra') {
             steps {
                 echo 'Creating infra'
+                sh '''
+                    terraform init
+                    terraform apply --auto-approve
+                '''
             }
         }
 
