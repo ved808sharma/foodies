@@ -1,20 +1,20 @@
 pipeline {
     agent any
+    tools {
+        terraform 'terraform144'
+    }
     stages {
-        stage('Checkout SCM') {
+        stage('GIT Checkout') {
             steps {
-                echo 'pulling from SCM'
+                echo 'GIT Checkout'
             }
         }
-        stage('build') {
+
+        stage('Infra') {
             steps {
-                echo 'building the project'
+                echo 'Creating infra'
             }
         }
-        stage('deploy') {
-            steps {
-                echo 'deploying to stage environment'
-            }
-        }
+
     }
 }
