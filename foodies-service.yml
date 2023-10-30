@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: foodiesclusteripservice
+spec:
+  type: ClusterIP
+  selector:
+    appName: foodiesapp
+    version: v1
+  ports:
+    - port: 8080
+      target: 8080

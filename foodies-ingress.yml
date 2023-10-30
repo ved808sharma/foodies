@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: foodiesingress
+  labels:
+    name: foodies-labels
+spec:
+  rules:
+  - host: ip172-18-0-28-ckvkcii4rl3g00csmdh0.direct.labs.play-with-k8s.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/foodies"
+        backend:
+          service:
+            name: foodiesclusteripservice
+            port: 
+              number: 8080
